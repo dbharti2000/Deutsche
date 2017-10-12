@@ -47,5 +47,5 @@ i tried providing parameters Serenity.batch.count, Serenity.batch.size, Serenity
 I've setup my automation tests in maven to run parallel, they run fine using these 2 plugins -
 
 
-maven-surefire-plugin
-cucumber-jvm-parallel-plugin
+1. maven-surefire-plugin
+2. cucumber-jvm-parallel-plugin
