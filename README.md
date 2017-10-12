@@ -20,7 +20,7 @@ We have two chromedrivers, one for mac and one for windows. I've mentioned the p
 Test #3 was a bit tricky, as website has two different headers, first one contains first item as Jewellery & Accessories and 2nd header contains Clothing and Accessories. So i've created test on the based of header type.
 
 
-Execution- 
+Execution -
 
 Tests should run on Windows and Mac, I've tested on both.
 If you are running the tests on mac then please use Mac chrome driver and windows one for running tests on windows
@@ -46,41 +46,6 @@ i tried providing parameters Serenity.batch.count, Serenity.batch.size, Serenity
 
 I've setup my automation tests in maven to run parallel, they run fine using these 2 plugins -
 
-   <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.20</version>
-            <configuration>
-                <includes>
-                    <include>**/*IT.class</include>
-                </includes>
-                <reuseForks>false</reuseForks>
-                <forkCount>4</forkCount>
-                <parallel>classes</parallel>
-                <threadCount>1</threadCount>
-            </configuration>
-    </plugin>
 
-
-
-<plugin>
-  <groupId>com.github.temyers</groupId>
-  <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-  <version>4.2.0</version>
-  <executions>
-    <execution>
-      <id>generateRunners</id>
-      <phase>generate-test-sources</phase>
-      <goals>
-        <goal>generateRunners</goal>
-      </goals>
-      <configuration>
-        <!-- List of package names to scan for glue code. -->
-        <glue>
-          <package>com.bharti.software</package>
-        </glue>
-        <format>html</format>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
+maven-surefire-plugin
+cucumber-jvm-parallel-plugin
