@@ -1,6 +1,8 @@
 package com.db.am.bauhaus.project.steplib;
 
+import com.db.am.bauhaus.project.DataContainer;
 import com.db.am.bauhaus.project.pages.MainSearchPage;
+import com.db.am.bauhaus.project.pages.RegisterPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -13,6 +15,7 @@ import static org.hamcrest.Matchers.containsString;
 public class SearchUser extends ScenarioSteps {
 
     MainSearchPage mainSearchPage;
+
 
     String searchText = "craft";
     String linkTextBelts = "Belts & Braces";
@@ -76,6 +79,7 @@ public class SearchUser extends ScenarioSteps {
             assertThat(mainSearchPage.getResultHeader(), containsString(linkTextBelts));
         }
     }
+
 
 }
 

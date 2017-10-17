@@ -10,9 +10,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Steps;
 
@@ -44,6 +44,11 @@ public class SearchSteps {
     public void goto_landing_page() {
         mainSearchPage.open();
         user.assertLandingPageTitle();
+    }
+
+    @Given("^user is at Etsy homepage$")
+    public void goto_homepage() {
+        goto_landing_page();
     }
 
     @Given("^([^\\s]+) is viewing the Etsy landing page \\(screenplay\\)$")
@@ -99,5 +104,6 @@ public class SearchSteps {
                 seeThat("the all categories header ", the(SearchTarget.ALL_CATEGORIES_HEADER), containsText(searchText))
         );
     }
+
 }
 

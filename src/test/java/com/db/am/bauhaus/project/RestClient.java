@@ -29,7 +29,7 @@ public class RestClient {
     }
 
     public static void performGetRequest() {
-        setContentType("text/html");
+        setContentType("application/xml");
         response = SerenityRest.given().log().all().headers(requestHeaders).get(requestURL);
         responseString = response.asString();
     }
@@ -55,7 +55,7 @@ public class RestClient {
     }
 
     public static void verifySearchResults(String searchResultItem){
-        assertTrue("Expected Search Result Item: " + searchResultItem + " Does Not Exist in Actual Search Results", responseString.contains(searchResultItem));
+        assertTrue("Expected Search Result Item: '" + searchResultItem + "' Does Not Exist in Actual Search Results ", responseString.contains(searchResultItem));
     }
 
 }

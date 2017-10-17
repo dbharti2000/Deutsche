@@ -25,8 +25,8 @@ Execution -
 Tests should run on Windows and Mac, I've tested on both.
 If you are running the tests on mac then please use Mac chrome driver and windows one for running tests on windows
 
+You can run the whole TestSuite by running UITestSuite as well or use below commands for command line
 
-User should be able to run the test from command line by running below commands -
 
 $ gradle clean test aggregate
 

@@ -26,7 +26,7 @@ public class HomepageApiSteps {
         restClient.performGetRequest();
     }
 
-    @When("^he makes a search for keyword (\\w+)$")
+    @When("^he makes a search for keyword (.*)$")
     public void perform_search_request(String searchKeyword) {
         restClient.performSearch(searchKeyword);
     }
