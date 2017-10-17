@@ -34,7 +34,6 @@ public class MainSearchPage extends PageObject {
     @FindBy(css = ".gnav-search-inner button[type='submit']")
     WebElementFacade searchButton;
 
-    //@FindBy(css = ".top-nav-item:nth-child(1)")
     @FindBy(css = ".top-nav-item:nth-child(1) .text-gray-darker")
     WebElementFacade searchDropDownJewelleryAndAccessories;
 

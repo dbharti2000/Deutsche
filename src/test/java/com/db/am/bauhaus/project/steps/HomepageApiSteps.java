@@ -7,7 +7,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 
-import java.util.List;
 
 public class HomepageApiSteps {
 
@@ -19,7 +18,7 @@ public class HomepageApiSteps {
 
     @Given("^John is a Etsy customer$")
     public void i_navigate_to_Homepage() {
-//Do Nothing
+     //Do Nothing
     }
 
     @When("^he makes a GET request to landing page$")
@@ -33,7 +32,7 @@ public class HomepageApiSteps {
     }
 
     @Then("^system should return below values in the result$")
-    public void verify_search_results(DataTable table){
+    public void verify_search_results(DataTable table) {
 
         for (String data : table.asList(String.class)) {
             restClient.verifySearchResults(data);

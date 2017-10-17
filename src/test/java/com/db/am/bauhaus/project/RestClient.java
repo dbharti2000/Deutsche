@@ -34,7 +34,6 @@ public class RestClient {
         responseString = response.asString();
     }
 
-
     public static void assertStatusCode(int statusCode) {
         assertThat(response.getStatusCode(), equalTo(statusCode));
     }
