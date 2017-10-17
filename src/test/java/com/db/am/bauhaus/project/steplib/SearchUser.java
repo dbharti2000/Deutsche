@@ -70,7 +70,6 @@ public class SearchUser extends ScenarioSteps {
     public void verify_link_text_in_result_page() {
 
         if (MainSearchPage.linkText.equalsIgnoreCase("Hats & Caps")) {
-            System.out.println("link =>" + MainSearchPage.linkText);
             assertThat(mainSearchPage.getResultHeader(), containsString(linkTextHats));
 
         } else {

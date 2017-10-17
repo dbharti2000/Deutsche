@@ -25,8 +25,13 @@ Feature: Sample
     When he selects the Home & Living icon
     Then the result should contain Home & Living
 
-  @test @api
-  Scenario: GET call to homepage
+  @test @api @Search
+  Scenario: Search for Caps through API
     Given John is a Etsy customer
     When he makes a GET request to landing page
-    Then he should get response code 200
+    Then api should return response code 200
+    When he makes a search for keyword HAT
+    Then api should return response code 200
+    And system should return below values in the result
+      | Baseball Hat |
+      | Beaver hat   |

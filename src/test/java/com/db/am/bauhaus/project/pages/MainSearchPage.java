@@ -31,22 +31,20 @@ public class MainSearchPage extends PageObject {
     @FindBy(id = "search-query")
     WebElementFacade inputBox;
 
-    //    @FindBy(css = ".btn.btn-orange.btn-append")1
-    // I had to write new css selector as existing one did not work for first sample test
     @FindBy(css = ".gnav-search-inner button[type='submit']")
     WebElementFacade searchButton;
 
-
-    @FindBy(css = ".top-nav-item:nth-child(1)")
+    //@FindBy(css = ".top-nav-item:nth-child(1)")
+    @FindBy(css = ".top-nav-item:nth-child(1) .text-gray-darker")
     WebElementFacade searchDropDownJewelleryAndAccessories;
 
     @FindBy(css = "#cnav-header-inner #catnav-menubar li a")
     WebElementFacade searchDropDownClothingAndAccessories;
 
-    @FindBy(css = ".pb-xs-3 #catnav-l3-10857")
+    @FindBy(css = ".pb-xs-3 ul:nth-child(1) li:nth-child(1) a:nth-child(1)")
     WebElementFacade searchDropDownHatsAndCaps;
 
-    @FindBy(css = ".category-container .catnav-subcategories .catnav-tertiary ul li a")
+    @FindBy(css = ".catnav-subcategories .catnav-tertiary ul:nth-child(1) li:nth-child(1) a:nth-child(1)")
     WebElementFacade searchDropDownBeltsAndBraces;
 
     @FindBy(css = "#content .vesta-hp-category-default .block-grid-xs-1 a:nth-child(1)")
@@ -77,7 +75,7 @@ public class MainSearchPage extends PageObject {
     }
 
     public void selectFirstLinkFromDropDown() {
-        if (searchDropDownHatsAndCaps.isPresent() == true) {
+        if(linkText.equalsIgnoreCase("Hats & Caps")){
             searchDropDownHatsAndCaps.waitUntilPresent().click();
         } else {
             searchDropDownBeltsAndBraces.waitUntilPresent().click();
@@ -98,4 +96,3 @@ public class MainSearchPage extends PageObject {
     }
 
 }
-
